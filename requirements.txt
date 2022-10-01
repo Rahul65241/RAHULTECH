@@ -1,3 +1,4 @@
+pywin32==304
 absl-py==1.0.0
 aioredis==2.0.1
 altair==4.2.0
