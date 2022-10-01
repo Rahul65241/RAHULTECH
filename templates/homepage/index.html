@@ -1,0 +1,710 @@
+﻿<div class="topleft"><img src="static/homepage/logo.jpg" width="50" height="70"></div><br><br><br><br>
+{% extends "basic.html" %}
+{% load static %}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="blink-bg">
+<div class="typewriter" style="color:white;"><h1><strong><tblink>................WELCOME TO OUR AMAZING WEBSITE..................</tblink></strong></h1></div>
+</div>
+  <section id="start" class="start" style="background-color:black;" data-aos="fade-up">
+    
+    <br><br>
+    
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="static/homepage/national-cancer-institute-L8tWZT4CcVQ-unsplash.jpg" class="d-block w-100" alt="..." height="400" width="200">
+          
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="static/homepage/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg" class="d-block w-100" alt="..." height="400" width="200">
+          
+        </div>
+        <div class="carousel-item">
+          <img src="static/homepage/piron-guillaume-y5hQCIn1c6o-unsplash.jpg" class="d-block w-100" alt="..." height="400" width="200">
+          
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div><br><br><br>
+  </section>
+  
+  <br><br><br><br><br>
+  <br><br>
+
+  <section id="about" class="about" style="background-color:black;" data-aos="fade-up">
+    <div class="card" style="background-color:black;" data-aos="fade-up">
+      <div class="card-body" style="color:white;">
+        <center><h1><h1><strong>ABOUT US</strong></h1></center>
+<strong><p style="font-size:20px color:blue"><p style="color:white;">It might have happened so many times that you or someone yours need doctor’s help immediately,
+    but they are not available due to some reasons.The Doctor Prescriber System is an end user
+    support and online consultation project. Here, we propose a web application that allow users 
+    to get instant guidance on their disease through an intelligent system. The application is 
+    fed with various details and the disease associated with those details.The application allows
+    user to share their disease related issues.It then processes user specific details to check 
+    for various illness that could be associated with it.Here we use some intelligent data mining
+    techniques to guess the most accurate illness that could be associated with patient’s details.
+    Based on result, patient can contact doctor accordingly for further treatment.</strong></p>
+
+  {% if user.is_authenticated %}
+
+   
+   {% else %}
+
+    <p class="lead">
+    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+    </p>
+  </div>
+</div>
+</section>
+
+<br><br><br><br><br><br>
+<section id="signin" class="signin" style="background-color:black;">
+
+<div class="container mt-5 mb-3" style="width:fit-content;" data-aos="fade-up"><br>
+      <center><h1 style="color:white;"><strong>Sign-In  As</strong></h1>
+          
+        </center>
+        
+        <form>
+            
+          <div class="container mt-5 mb-5">
+       <div class="row" style="background-color:black;" >
+          <div class="col">
+             <a href="{% url 'sign_in_admin' %}">
+      <img  alt="admin" src="{% static 'homepage/admin.PNG' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_doctor' %}">
+      <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_patient' %}">
+      <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+      </a>
+          </div>
+        </div>
+        </div>
+      </form>
+</div>
+
+<br><br><br>
+</section>
+
+    {% endif %}
+
+<br><br><br>
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-In</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div><br><br><br><br>
+</div>
+
+
+
+
+<!-- Large modal -->
+<section id="signup" class="signup" style="background-color:black;">
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-Up  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+</section><br><br><br><br><br><br><br><br>
+
+
+ <!-- ======= Services Section ======= -->
+ <section id="services" class="services" style="background-color:black;"><br>
+  <center><h1 style="color:white;"><strong>SERVICES</strong></h1></center><br>
+  <div class="album py-5 bg-dark">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="static/homepage/24.png" alt="" class="img-fluid" width="200" height="200">
+
+            <div class="card-body"><strong>
+              <p class="card-text">IT IS AVAILABLE 24*7 EVERYWHERE AND EVERYTIME</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="static/homepage/free.png" alt="" class="img-fluid">
+
+            <div class="card-body">
+              <p class="card-text">ALTHOUGH IT IS FREE OF COST BUT SERVICE IS NOT COMPROMISED...</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="static/homepage/c31.jpg" alt="" class="img-fluid" width="200" height="200">
+
+            <div class="card-body">
+              <p class="card-text">SPECIALIST DOCTOR OF EVERY DISEASE AVAILABLE.</p></strong>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <br><br><br><br><br>
+   </section>
+<!-- End Services Section -->
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<br><br><br><br>
+
+<!-- DOCTOR SECTION-->
+
+<section id="doctor" class="doctor" style="background-color:black;" data-aos="fade-up"><br>
+  <center><strong><h1 style="color:white;">Our Doctors</strong></h1></center>
+  <div class="row mt-5 mb-5">
+      <div class="col">
+          <div class="card">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Dr. MANISH BANSAL </h5>
+                  <img  alt="admin" src="{% static 'homepage/c31.jpg' %}" width="200" height="150" class="rounded">
+                  <p class="card-text">H.No-1283, Ward No-14, New Anaz Mandi Road, P.O-Radaur, Distt. Yamuna Nagar - 135133, (Haryana).</p>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card">
+              <div class="card-body text-center">
+                  <h5 class="card-title">ADARSH MISHRA </h5>
+                  <img  alt="admin" src="{% static 'homepage/c41.jpg' %}" width="200" height="150" class="rounded">
+                  <p class="card-text">Om Niwas Khai Basti, Khai Road, Lehragaga-148031, Distt. Sangrur, Punjab.</p>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card">
+              <div class="card-body text-center">
+                  <h5 class="card-title">DR. RADHIKA SWAROOP</h5>
+                  <img  alt="admin" src="{% static 'homepage/s72.jpg' %}" width="200" height="150" class="rounded">
+                  <p class="card-text">Swaroop Hospital, 1, Hawa Sarak, Civil Lines, # Jaipur-302 019.</p>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+    
+  
+  <br><br><br><br>
+  
+            
+</section>
+
+<!-- END DOCTOR SECTION -->
+
+<br><br><br><br><br><br><br><br>
+
+<!-- DEPARTMENTS START-->
+
+<section id="departments" class="departments" style="background-color:black;">
+  <div class="container" data-aos="fade-up" style="color:white;">
+<br>
+    <div class="section-title"><center>
+      <h1><strong>Departments</strong></h1></center><br><br>
+      
+    </div><br><br>
+
+    <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+              <h4>Cardiology</h4>
+              <p>Cardiology is the study and treatment of disorders of the heart and the blood vessels. </p>
+            </a>
+          </li>
+          <li class="nav-item mt-2">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+              <h4>Neurology</h4>
+              <p>A neurologist is a physician specializing in neurology and trained to investigate, or diagnose and treat neurological disorders.</p>
+            </a>
+          </li>
+          <li class="nav-item mt-2">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+              <h4>Hepatology</h4>
+              <p>Hepatology is the branch of medicine that incorporates the study of liver, gallbladder, biliary tree, and pancreas as well as management of their disorders.</p>
+            </a>
+          </li>
+          <li class="nav-item mt-2">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+              <h4>Pediatrics</h4>
+              <p>Pediatrics is the branch of medicine dealing with the health and medical care of infants, children, and adolescents from birth up to the age of 18.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-8">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <h3>Cardiology</h3>
+            <p class="fst-italic">Cardiology is a medical specialty and a branch of internal medicine concerned with disorders of the heart. It deals with the diagnosis and treatment of such conditions as congenital heart defects, coronary artery disease, electrophysiology, heart failure and valvular heart disease.Cardiology is the study and treatment of disorders of the heart and the blood vessels. A person with heart disease or cardiovascular disease may be referred to a cardiologist.</p>
+            <img src="static/homepage/Cardiology-scaled-1.jpg" alt="" class="img-fluid" width="200" height="200">
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <h3>Neurology</h3>
+            <p class="fst-italic">A neurologist is a physician specializing in neurology and trained to investigate, or diagnose and treat neurological disorders.[2] Neurologists treat a myriad of neurologic conditions, including stroke, seizures, movement disorders such as Parkinson's disease, autoimmune neurologic disorders such as multiple sclerosis, headache disorders like migraine and dementias such as Alzheimer's disease.[3] Neurologists may also be involved in clinical research, clinical trials, and basic or translational research. While neurology is a nonsurgical specialty, its corresponding surgical specialty is neurosurgery</p>
+            <img src="static/homepage/neurology.jpg" alt="" class="img-fluid" width="200" height="200">
+          </div>
+          <div class="tab-pane" id="tab-3">
+            <h3>Hepatology</h3>
+            <p class="fst-italic">Hepatology is the branch of medicine that incorporates the study of liver, gallbladder, biliary tree, and pancreas as well as management of their disorders.</p>
+            <img src="static/homepage/HEPATOLOGY-1.jpg" alt="" class="img-fluid" width="200" height="200">
+          </div>
+          <div class="tab-pane" id="tab-4">
+            <h3>Pediatrics</h3>
+            <p class="fst-italic">Pediatrics is the branch of medicine dealing with the health and medical care of infants, children, and adolescents from birth up to the age of 18. The word “paediatrics” means “healer of children”; they are derived from two Greek words: (pais = child) and (iatros = doctor or healer).</p>
+            <img src="static/homepage/pediatrics.jpg" alt="" class="img-fluid" width="200" height="200">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><br><br><br><br>
+</section>
+
+<br><br><br><br><br><br>
+<!-- DEPARTMENT ENDS-->
+
+ <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials" style="background-color:black;">
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+<div class="container" data-aos="fade-up">
+    <div class="row text-center mb-3">
+        <div class="col-md-12"><center>
+          <br>  <h1><strong style="color:white;">TESTIMONIALS</strong></h1></center>
+            
+            
+        </div>
+    </div>
+	<div class="row">
+		<!-- Swiper -->
+  <div class="swiper-container">
+<div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="row">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/15.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>VIKASH SINGH</h5>
+                                   <h4 class="pt-1 pb-2">WHEN I WAS AT HOME DURING VACATION,I AM SUFFERING FROM DISEASE BUT THIS HELPS ME A LOT</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/14.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>AMITA SINGH</h5>
+                                   <h4 class="pt-1 pb-2">WITH THE HELP OF THIS WEBSITE,MY MOTHER GET CURED BY OWNSELF.</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/21.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>AVINASH KUMAR</h5>
+                                   <h4 class="pt-1 pb-2">IT WAS VERY SURPRISING AND SOCKING TO GET SUCH QUALITY SERVICE FREE OF COST</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/19.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>SHREYA SINGH</h5>
+                                   <h4 class="pt-1 pb-2">DOCTOR'S ARE VERY CO-OPERATIVE AND HELPFUL</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="row">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/12.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>ABHAY DEOL</h5>
+                                   <h4 class="pt-1 pb-2">ALTHOUGH,IT IS FREE OF COST BUT EXPERIENCED BEST SERVICES.INFACT BETTER THAN PAYABLE SERVICES.</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/13.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>ADARSH MISHRA</h5>
+                                   <h4 class="pt-1 pb-2">IT IS VERY SIMPLE  AND EASY TO USE.INFACT,IT IS VERY EASY TO USE FOR SENIOR CITIZENS ALSO..</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/11.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>ROUNAK SINHA</h5>
+                                   <h4 class="pt-1 pb-2">SAVES A LOT OF TIME.</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/18.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>PUSHPA</h5>
+                                   <h4 class="pt-1 pb-2">AS A ONLY LADY WORKING IN MY HOME,IT WAS TOUGH TO GET GO TO HOSPITAL DAILY. </h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="row">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img"><img src="static/homepage/17.jpeg"></div>
+                                <div class="card-body">
+                                   <h5>ABHA DEVI</h5>
+                                   <h4 class="pt-1 pb-2">AS A HOUSEWIFE,GETTING APPOINTMENT AND MEETING A DOCTOR WAS TROUBLE TASK FOR ME.BUT THIS WEBSITE MAKE MY WORK EASIER.</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                       
+                        </div>
+                       
+                       
+                    
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+  </div>
+
+	</div>
+</div>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script><br><br><br><br>
+</section>
+  <!-- End Testimonials Section -->        
+  <br><br><br><br><br><br><br><br>
+
+<!-- ======= Frequently Asked Questioins Section ======= -->
+   <section id="faq" class="faq" style="background-color:black;" data-aos="fade-up">
+    <div class="panel-group" id="accordion" style="color:white;"><br>
+      <h1><center><strong>FREQUENTLY ASKED QUESTIONS</strong></center></h1>
+      <div class="panel panel-default"><br><br>
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            IS ALL THE SERVICES ARE FREE OF COST INCLUDING CONSULTATION?</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">YES SIR ABSOLUTELY,EVERYTHING IS FREE HERE INCLUDING CONSULTATION WITH THE DOCTOR.AND WE WILL PROVIDE YOU BEST EXPERIENCE.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            DO YOU HAVE SPECIALIST DOCTORS FOR SPECIFIC DISEASE?</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">YES,WE HAVE SPECIALIST DOCTOR OF ALL DEPARTMENTS.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            IS THIS WEBSITE FEMALE FRIENDLY? </a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">YES,ABSOLUTELY AS WE HAVE FEMALES DOCTORS ALSO.</div>
+        </div>
+      </div>
+    </div> <br><br>
+
+</section>
+ 
+    <!-- ======= END Frequently Asked Questioins Section ======= -->
+<br><br><br><br><br><br><br><br>
+
+<!--CONTACT SECTION STARTS-->    
+
+<section id="contact" class="contact" style="background-color:black;">
+  <div class="container" style="color:white;" data-aos="fade-up">
+<br>
+    <div class="section-title">
+     <center> <h1><strong>Contact Us</strong></h1></center>
+    </div>
+
+  </div>
+
+  <div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.5470304557152!2d76.4359999147072!3d9.461057093221903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0882b46d7a86f9%3A0x6affd3b53745a014!2sCUCEK%20Ground!5e0!3m2!1sen!2sin!4v1652097741967!5m2!1sen!2sin" width="1600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="album py-5 bg-dark">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  <div class="col">
+    <div class="card shadow-sm">
+
+      <div class="card-body" style="background-color:black;">
+        <p class="card-text" style="color:white;"><strong>ADDRESS : CUCEK GROUND,PULLINCUNNU,ALAPPUZHA,KERALA-688504</strong></p>
+        <div class="d-flex justify-content-between align-items-center">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow-sm">
+      <div class="card-body" style="background-color:black;">
+        <p class="card-text" style="color:white;"><strong>MOBILE NO:8804807540</strong></p>
+        <div class="d-flex justify-content-between align-items-center">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow-sm">
+      <div class="card-body" style="background-color:black;">
+        <p class="card-text" style="color:white;"><strong>EMAIL ID:amitkryd542@gmail.com</strong></p>
+        <div class="d-flex justify-content-between align-items-center">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    <br><br><br><br>
+       
+
+      
+ 
+</section>
+
+<!--CONTACT SECTION ENDS-->
+<br><br><br><br><br><br><br>
+
+<footer class="site-footer" style="color:white;">
+  <div class="container" style="background-color:black;">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Rahultech.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the patient who are in need with the web platform.It might have happened so many times that you or someone yours need doctor’s help immediately,
+          but they are not available due to some reasons.The Doctor Prescriber system is an end user
+           support and online consultation project. Here, we propose a web application that allow users 
+           to get instant guidance on their disease through an intelligent system. The application is 
+           fed with various details and the disease associated with those details.The application allows
+            user to share their disease related issues.It then processes user specific details to check 
+            for various illness that could be associated with it.Here we use some intelligent data mining
+             techniques to guess the most accurate illness that could be associated with patient’s details.
+             Based on result, patient can contact doctor accordingly for further treatment.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="http://scanfcode.com/category/android/">CONTACT US</a></li>
+          <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Contact:</h6>
+        <ul class="footer-links">
+          <li>BORING CANAL ROAD,</li>
+          <li>PATNA,BIHAR,</li>
+          <li>INDIA,</li>
+          <li>PIN CODE:800023</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+     <a href="#">RAHULTECH</a>.
+        </p>
+      </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="centered">
+      <a href="https://m.facebook.com/https://www.facebook.com/aadarsh.mishra.961" class="fb"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/invites/contact/?i=1pj99tz7zilyx&utm_content=6if8ap0" class="insta"><i class="fa fa-instagram"></i></a>
+      <a href="https://twitter.com/AADARSH05238938?t=STnbLy4Kt88ukwGoh7W17A&s=09" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/aadarshmishra49" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({once:"true"});</script>
+    
+
+
+
+
+    
+{% endblock %}
