@@ -1,4 +1,4 @@
-pypiwin32==303
+pypiwin32==223
 pypiwin32-ctypes==0.2.0
 pypiwinpty==1.1.6
 absl-py==1.0.0
