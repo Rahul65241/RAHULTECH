@@ -79,11 +79,8 @@ WSGI_APPLICATION = 'RAHULTECH.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'RAHULTECH',
-        'USER': 'postgres',
-        'PASSWORD': 'rahul123',
-        'HOST': 'localhost'
+         'ENGINE': 'django.db.backends.mysql',
+        
     }
 }
 
