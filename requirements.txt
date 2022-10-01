@@ -153,7 +153,6 @@ pandas==1.4.1
 pandocfilters==1.5.0
 parso==0.8.3
 pathlib2==2.3.7.post1
-pathspec==0.5.5
 pefile==2022.5.30
 pickleshare==0.7.5
 Pillow==9.0.1
