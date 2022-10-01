@@ -1,0 +1,1 @@
+web: gunicorn RAHULTECH.wsgi --log-file -
